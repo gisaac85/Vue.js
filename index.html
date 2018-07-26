@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <title>
+        Hello Vue.js
+    </title>
+</head>
+
+<body>
+    <div id="app">
+        {{name}}
+        <br>
+        <ul>
+            <li v-for="item in list">
+                {{item}}
+                <button @click="deleteItem(item)">
+                    -
+                </button>
+
+            </li>
+            <li v-if="newItem">{{newItem}}</li>
+        </ul>
+        <input v-model="newItem" />
+        <br>
+        <button @click="addItem">Add</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
