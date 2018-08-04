@@ -1,9 +1,10 @@
 let app = new Vue({
     'el': "#app",
     'data': {
-        name: "Hello World",
+        name: "<h1>Hello World</h1>",
         list: ['Apple', 'Orange', 'Banana'],
-        newItem: ''
+        newItem: '',
+        inputTxt: ''
     },
     'methods': {
         deleteItem: function (item) {
@@ -13,6 +14,12 @@ let app = new Vue({
         addItem: function () {
             this.list.push(this.newItem);
             this.newItem = '';
+        },
+        saveData: function (event) {
+            console.log('Go clicked : ' + this.inputTxt);
+            //Hello this is changing :) 
+            this.inputTxt = '';
+
         }
     }
 });

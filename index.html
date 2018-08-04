@@ -3,15 +3,17 @@
 <html>
 
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="vue.js"></script>
+
     <title>
         Hello Vue.js
     </title>
 </head>
 
 <body>
+
     <div id="app">
-        {{name}}
+        <div v-html="name"></div>
         <br>
         <ul>
             <li v-for="item in list">
@@ -26,8 +28,17 @@
         <input v-model="newItem" />
         <br>
         <button @click="addItem">Add</button>
+        <br>
+        <br>
+        <form v-on:submit.prevent="saveData">
+            <input type="text" name="test" v-model="inputTxt" />
+            <button type="submit">GO</button>
+        </form>
+
     </div>
+
     <script src="index.js"></script>
+
 </body>
 
 </html>
